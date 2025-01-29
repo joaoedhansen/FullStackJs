@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Troco</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Calculadora de troco</h1>
+
+            <label for="numero1">Valor do produto:</label>
+            <input type="number" id="caixaValorProduto">
+
+            <label for="numero2">Quantidade de produto(s):</label>
+            <input type="number" id="caixaQuantidadeProduto">
+
+            <label for="numero3">Pagamento recebido:</label>
+            <input type="number" id="caixaPagamento">
+
+            <button onclick="botao_click()">Calcular</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            let caixaValorProduto = document.getElementById("caixaValorProduto").value;
+            let caixaQuantidadeProduto = document.getElementById("caixaQuantidadeProduto").value;
+            let caixaPagamento = document.getElementById("caixaPagamento").value;
+
+            let valorProduto = parseFloat(caixaValorProduto);
+            let quantidadeProduto = parseFloat(caixaQuantidadeProduto);
+            let pagamento = parseFloat(caixaPagamento);
+
+            let total = valorProduto * quantidadeProduto;
+            let troco = pagamento - total;
+
+            if (troco == 0) {
+                let mensagemSemTroco = "O cliente não possui troco. Valor total: R$" + total.toFixed(2) + " | Pagamento: R$" + pagamento.toFixed(2);
+                alert(mensagemSemTroco);
+            }
+
+            else if (troco < 0) {
+                let mensagemFaltouDinheiro = "O pagamento do cliente não é o suficiente. " + "Valor total: R$" + total.toFixed(2) + " | Pagamento: R$" + pagamento.toFixed(2);;
+                alert(mensagemFaltouDinheiro);
+            }
+
+            else {
+                let mensagemTroco = "Quantidade de produtos: " + quantidadeProduto +
+                    " | Valor unitário: R$" + valorProduto.toFixed(2) + " | Troco: R$" + troco.toFixed(2);
+                alert(mensagemTroco);
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
