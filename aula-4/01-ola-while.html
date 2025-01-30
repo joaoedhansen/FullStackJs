@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Olá Mundo</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Olá Mundo</h1>
+
+            <p>Informe a quantidade de vezes que você quer enviar "Olá Mundo".</p>
+
+            <label for="txtQuantidade">quantidade:</label>
+            <input type="number" id="txtQuantidade">
+
+            <button onclick="botao_click()">Enviar</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            let txtQuantidade = document.getElementById("txtQuantidade").value;
+            let quantidade = parseInt(txtQuantidade);
+
+            while (quantidade > 0) {
+                alert("Olá Mundo!");
+
+                quantidade = quantidade - 1;
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

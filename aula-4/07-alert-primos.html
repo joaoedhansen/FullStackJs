@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Números Primos</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Números Primos</h1>
+
+            <p>Informe o número inicial e final para listar os números primos.</p>
+
+            <label for="txtNumero1">Número inicial:</label>
+            <input type="number" id="txtNumero1">
+
+            <label for="txtNumero2">Número final:</label>
+            <input type="number" id="txtNumero2">
+
+            <button onclick="botao_click()">OK</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            let txtNumero1 = document.getElementById("txtNumero1").value;
+            let txtNumero2 = document.getElementById("txtNumero2").value;
+
+            let numeroInicial = parseInt(txtNumero1);
+            let numeroFinal = parseInt(txtNumero2);
+
+            let mensagem = "Os números primos são: \n"
+
+            for (var i = numeroInicial; i <= numeroFinal; i++) {
+                // Se i for maior que 1 e divisilvel apenas por ele mesmo, é primo
+                if (i > 1 && i / i === 0) {
+                    mensagem = mensagem + i + "\n";
+                }
+            }
+
+            alert(mensagem);
+        }
+
+    </script>
+
+</body>
+
+</html>

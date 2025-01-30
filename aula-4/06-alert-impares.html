@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Ímpares</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Ímpares</h1>
+
+            <p>Informe o intervalo de dois números para a verificação dos ímpares.</p>
+
+            <label for="txtNumero1">Primeiro númeor:</label>
+            <input type="number" id="txtNumero1">
+
+            <label for="txtNumero2">Segundo número:</label>
+            <input type="number" id="txtNumero2">
+
+            <button onclick="botao_click()">OK</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            let txtNumero1 = document.getElementById("txtNumero1").value;
+            let txtNumero2 = document.getElementById("txtNumero2").value;
+
+            let numero1 = parseInt(txtNumero1);
+            let numero2 = parseInt(txtNumero2);
+
+            let mensagem = "Os números ímpares são: \n"
+
+            for (var i = txtNumero1; i <= numero2; i++) {
+                if (i % 2 != 0) {
+                    mensagem = mensagem + i + "\n"
+                }
+            }
+
+            alert(mensagem);
+        }
+
+    </script>
+
+</body>
+
+</html>

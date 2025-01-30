@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Ímpares</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Calculadora de números ímpares</h1>
+
+            <p>Informe o intervalo dos números ímpares que você deseja calcular.</p>
+
+            <label for="txtCaixa1">Número inicial:</label>
+            <input type="number" id="txtCaixa1">
+
+            <label for="txtCaixa2">Número final:</label>
+            <input type="number" id="txtCaixa2">
+
+            <button onclick="botao_click()">Calcular</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            let txtCaixa1 = document.getElementById("txtCaixa1").value;
+            let txtCaixa2 = document.getElementById("txtCaixa2").value;
+
+            let numeroInicial = parseInt(txtCaixa1);
+            let numeroFinal = parseInt(txtCaixa2);
+
+            let soma = 0;
+
+            for (var i = numeroInicial; i <= numeroFinal; i++) {
+                if (i % 2 !== 0) {
+                    soma += i;
+                }
+            }
+
+            let mensagem = "A soma dos números ímpares é: " + soma;
+            alert(mensagem);
+
+        }
+
+    </script>
+
+</body>
+
+</html>
