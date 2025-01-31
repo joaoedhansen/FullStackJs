@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Array</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Array</h1>
+
+            <p>Informe a quantidade de armazenamento e quais números você deseja armazenar.</p>
+
+            <label for="txtQuantidadeNumero">Quantidade de números:</label>
+            <input type="number" id="txtQuantidadeNumero">
+
+            <label for="txtNumeroDigitado">Informe o número para armazenamento:</label>
+            <input type="number" id="txtNumeroDigitado">
+
+            <button onclick="botao_click()">OK</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        let numeros = [];
+
+        function botao_click() {
+
+            let txtQuantidade = parseInt(document.getElementById("txtQuantidadeNumero").value);
+
+            let txtNumero = document.getElementById("txtNumeroDigitado");
+            // Se na lista não estiver com o máximo de números
+            if (numeros.length < txtQuantidade) {
+
+                let numeroDigitado = parseInt(txtNumeroDigitado.value);
+
+                // Adicionar número na lista
+                numeros.push(numeroDigitado);
+
+                // Limpar caixa após informar o número
+                txtNumero.value = "";
+
+                // Adicionar o foco na caixa para informar mais números
+                txtNumero.focus();
+            }
+
+            alert(numeros.toString());
+
+        }
+
+    </script>
+
+</body>
+
+</html>

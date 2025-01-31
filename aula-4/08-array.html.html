@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-    <title>Título</title>
+    <title>Array</title>
     <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,13 +14,9 @@
     <div class="container">
         <div class="box">
 
-            <h1>Título</h1>
+            <h1>Array</h1>
 
-            <p>Parágrafo</p>
-
-            <label for="txt1">Caixa de Texto:</label>
-
-            <input type="text" id="txt1">
+            <p>Clique no botão para visualizar um nome.</p>
 
             <button onclick="botao_click()">Botão</button>
 
@@ -31,9 +27,9 @@
 
         function botao_click() {
 
-            var teste = "teste";
+            let clientes = ["João", "Júlio", "Camila", "Maria", "Gilmara", "Alexandre"];
 
-            console.log(teste);
+            alert(clientes[0]);
 
         }
 
