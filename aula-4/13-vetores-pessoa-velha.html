@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Pessoa mais velha</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Pessoa Mais Velha</h1>
+
+            <p>Informe os dados.</p>
+
+            <label for="txtQtdePessoas">Quantidade de pessoas:</label>
+            <input type="number" id="txtQtdePessoas">
+
+            <label for="txtNomePessoa">Nome:</label>
+            <input type="text" id="txtNomePessoa">
+
+            <label for="txtIdadePessoa">Idade:</label>
+            <input type="number" id="txtIdadePessoa">
+
+            <button onclick="botao_click()">OK</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        let nomes = [];
+        let idades = [];
+
+        function botao_click() {
+            let txtQtdePessoas = document.getElementById("txtQtdePessoas");
+            let nomePessoa = document.getElementById("txtNomePessoa");
+            let txtIdadePessoa = document.getElementById("txtIdadePessoa");
+
+            let qtdePessoas = parseInt(txtQtdePessoas.value);
+            let idadePessoa = parseInt(txtIdadePessoa.value);
+
+            if (nomes.length < qtdePessoas) {
+                nomes.push(nomePessoa.value);
+                idades.push(idadePessoa);
+
+                // Limpar os campos para a próxima entrada
+                nomePessoa.value = "";
+                txtIdadePessoa.value = "";
+                nomePessoa.focus();
+            }
+
+            // Se todas as entradas foram fornecidas, processamos o resultado
+            if (nomes.length === qtdePessoas) {
+                let maiorIdade = idades[0];
+                let posicaoMaiorIdade = 0;
+
+                for (let i = 1; i < idades.length; i++) {
+                    if (idades[i] > maiorIdade) {
+                        maiorIdade = idades[i];
+                        posicaoMaiorIdade = i;
+                    }
+                }
+
+                let nomePessoaMaisVelha = nomes[posicaoMaiorIdade];
+
+                let mensagem = "Nome: " + nomePessoaMaisVelha + " | Idade: " + maiorIdade;
+                alert(mensagem);
+
+                // Resetando os arrays e limpando o campo de quantidade
+                nomes = [];
+                idades = [];
+                txtQtdePessoas.value = "";
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

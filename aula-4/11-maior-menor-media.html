@@ -21,7 +21,7 @@
             <label for="txtQtdeNumeros">Quantidade de números:</label>
             <input type="number" id="txtQtdeNumeros">
 
-            <label for="txtNumeroDigitado">Infomr os números:</label>
+            <label for="txtNumeroDigitado">Informe os números:</label>
             <input type="number" id="txtNumeroDigitado">
 
             <button onclick="botao_click()">OK</button>
@@ -36,40 +36,45 @@
         function botao_click() {
 
             let qtdeNumeros = parseInt(document.getElementById("txtQtdeNumeros").value);
+
             let txtNumero = document.getElementById("txtNumeroDigitado");
+            numeroDigitado = parseInt(txtNumero.value);
 
             if (numeros.length < qtdeNumeros) {
 
-                let numeroDigitado = parseInt(txtNumeroDigitado.value);
 
                 numeros.push(numeroDigitado);
 
                 txtNumero.value = "";
-
                 txtNumero.focus();
 
+
+
                 if (numeros.length == qtdeNumeros) {
-                    let maiorNumero;
-                    let menorNumero;
-                    let media;
-                }
+                    let maiorNumero = numeros[0];
+                    let menorNumero = numeros[0];
+                    let soma = 0;
 
-                for (let i = 0; i < numeros.length; i++) {
+                    for (let i = 0; i < numeros.length; i++) {
 
-                    let numero = numeros[i];
+                        let numero = numeros[i];
 
-                    if (numero == undefined || numero > maiorNumero) {
-                        numero = maiorNumero;
+                        if (numero > maiorNumero) {
+                            maiorNumero = numero;
+                        }
+
+                        if (numero < menorNumero) {
+                            menorNumero = numero;
+                        }
+
+                        soma += numero;
                     }
 
-                    if (numero == undefined || numero < menorNumero) {
-                        numero = menorNumero;
-                    }
-                }
+                    let media = soma / numeros.length;
 
-                alert("Maior número: " + maiorNumero + " | Menor número: " + menorNumero);
+                    alert("Maior número: " + maiorNumero + " | Menor número: " + menorNumero + " | Média: " + media);
+                }
             }
-
         }
 
     </script>
