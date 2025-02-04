@@ -1,0 +1,22 @@
+input {
+    width: 100%; /* Ocupar 100% */
+}
+
+button {
+    width: 100%; /* Ocupar 100% */
+}
+
+a {
+    margin: 6px;
+    color: #000FFF;
+}
+
+.esqueci-senha {
+    float: right; /* Ficar à direita */
+    font-size: 13px; /* Tamanho da fonte */
+    color: #000FFF;
+}
+
+.box {
+    width: 300px;
+}

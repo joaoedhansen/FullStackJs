@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="03-cadastro.css">
+
 </head>
 
 <body>
@@ -19,51 +21,71 @@
             <img height="100" src="../logo.png" />
 
             <form>
+                <div class="row">
 
-                <label for="txtNome">Nome:</label>
-                <input type="text" id="txtNome">
+                    <div class="left">
+                        <label for="txtNome">Nome:</label>
+                        <input type="text" id="txtNome">
+                    </div>
 
-                <br />
+                    <div class="right">
+                        <label for="txtSobrenome">Sobrenome:</label>
+                        <input type="text" id="txtSobrenome">
 
-                <label for="txtSobrenome">Sobrenome:</label>
-                <input type="text" id="txtSobrenome">
+                    </div>
+                </div>
 
-                <br />
+                <div class="row">
 
-                <label for="txtSobrenome">Sobrenome:</label>
-                <input type="text" id="txtSobrenome">
+                    <div class="left">
+                        <label for="txtCpf">CPF:</label>
+                        <input type="number" id="txtCpf">
+                    </div>
 
-                <br />
+                    <div class="right">
+                        <label for="txtTelefone">Telefone:</label>
+                        <input type="number" id="txtTelefone">
+                    </div>
+                </div>
 
-                <label for="txtCpf">CPF:</label>
-                <input type="number" id="txtCpf">
+                <div class="row">
 
-                <br />
+                    <div class="left">
 
-                <label for="txtEmail">E-mail:</label>
-                <input type="email" id="txtEmail">
+                        <label for="slcGenero">Gênero:</label>
+                        <select id="slcGenero">
+                            <option></option>
+                            <option>Masculino</option>
+                            <option>Feminino</option>
+                            <option>Prefiro não informar</option>
+                        </select>
+                    </div>
 
-                <br />
 
-                <label for="txtTelefone">Telefone:</label>
-                <input type="number" id="txtTelefone">
+                    <div class="right">
 
-                <br />
+                        <label for="txtEmail">E-mail:</label>
+                        <input type="email" id="txtEmail">
 
-                <label for="slcGenero">Gênero:</label>
-                <select id="slcGenero">
-                    <option>Masculino</option>
-                    <option>Feminino</option>
-                    <option>Prefiro não informar</option>
-                </select>
+                    </div>
+                </div>
 
-                <br />
+                <div class="row">
 
-                <label for="txtSenha">Senha:</label>
-                <input type="password" id="txtSenha">
+                    <div class="left">
+                        <label for="txtSenha">Senha:</label>
+                        <input type="password" id="txtSenha">
+                    </div>
 
-                <button>Login</button>
+                    <div class="right">
+                        <label for="txtConfirmaSenha">Confirmar senha:</label>
+                        <input type="password" id="txtConfirmaSenha">
+                    </div>
+                </div>
 
+                <div class="row">
+                    <button>Cadastrar</button>
+                </div>
             </form>
 
             <p>Já possui login?<a href="02-login.html">Realizar login</a></p>
