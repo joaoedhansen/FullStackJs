@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="03-cadastro.css">
+    <link rel="stylesheet" href="cadastro.css">
 
 </head>
 
@@ -84,15 +84,18 @@
                 </div>
 
                 <div class="row">
-                    <button>Cadastrar</button>
+                    <button id="btnCadastrar">Cadastrar</button>
                 </div>
             </form>
 
-            <p>Já possui login?<a href="01-login.html">Realizar login</a></p>
+            <span id="spnErro" class="erro"></span>
+
+            <p>Já possui login?<a href="login.html">Realizar login</a></p>
 
         </div>
     </div>
 
+    <script src="cadastro.js"></script>
 </body>
 
 </html>
